@@ -12,11 +12,6 @@ import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
 
-/**
- * @Author lucky_wxn
- * @Date 16/9/2023 上午11:31
- * @Content
- */
 public class SpringMetricsRegistry implements MeterBinder {
     private static Logger log = LoggerFactory.getLogger(SpringMetricsRegistry.class);
 

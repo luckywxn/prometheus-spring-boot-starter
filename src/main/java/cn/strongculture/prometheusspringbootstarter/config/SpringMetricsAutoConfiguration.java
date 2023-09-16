@@ -24,11 +24,6 @@ import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
 
-/**
- * @Author lucky_wxn
- * @Date 16/9/2023 上午11:27
- * @Content
- */
 @Configuration
 @ConditionalOnClass(MetricsClient.class)
 public class SpringMetricsAutoConfiguration {
@@ -69,7 +64,7 @@ public class SpringMetricsAutoConfiguration {
                 throw e;
             } finally {
                 concurrentExecutionCount.get(method).addAndGet(-1.0);
-                MetricTimer timer = metricsClient.timer("api_cost", "监控接口耗时", tags);
+                MetricTimer timer = metricsClient.timer("api_cost", "Monitoring interface time consumption", tags);
                 timer.record(System.currentTimeMillis() - startTime);
             }
             return result;
@@ -88,7 +83,7 @@ public class SpringMetricsAutoConfiguration {
             tags.put("method", method.getName());
             tags.put("class", getSimplifiedClassName(method.getDeclaringClass()));
             concurrentExecutionCount.put(method, new AtomicDouble(0));
-            metricsClient.gauge("api_concurrent_execution_current", "接口瞬时并发数", tags, new Callable<Double>() {
+            metricsClient.gauge("api_concurrent_execution_current", "Instantaneous concurrency of interfaces", tags, new Callable<Double>() {
                 @Override
                 public Double call() throws Exception {
                     return concurrentExecutionCount.get(method).get();

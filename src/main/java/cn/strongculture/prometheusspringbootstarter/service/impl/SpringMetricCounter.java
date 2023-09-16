@@ -6,11 +6,6 @@ import io.micrometer.core.instrument.Counter;
 import java.util.Map;
 import java.util.Objects;
 
-/**
- * @Author lucky_wxn
- * @Date 16/9/2023 上午11:28
- * @Content
- */
 public class SpringMetricCounter implements MetricCounter {
     private String metricName;
     private Map<String, String> tagMap;

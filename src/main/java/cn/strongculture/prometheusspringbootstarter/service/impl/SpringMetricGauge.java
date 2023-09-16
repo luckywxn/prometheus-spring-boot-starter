@@ -5,11 +5,6 @@ import java.util.Objects;
 import java.util.concurrent.Callable;
 import java.util.function.ToDoubleFunction;
 
-/**
- * @Author lucky_wxn
- * @Date 16/9/2023 上午11:32
- * @Content
- */
 public class SpringMetricGauge {
     public static final ToDoubleFunction<Callable<Double>> metricFunc = doubleCallable -> {
         try {

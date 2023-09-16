@@ -16,11 +16,6 @@ import java.util.concurrent.Callable;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ConcurrentMap;
 
-/**
- * @Author lucky_wxn
- * @Date 16/9/2023 上午11:30
- * @Content
- */
 public class SpringMetricsClient implements MetricsClient {
     private static Logger log = LoggerFactory.getLogger(SpringMetricsClient.class);
     @Autowired

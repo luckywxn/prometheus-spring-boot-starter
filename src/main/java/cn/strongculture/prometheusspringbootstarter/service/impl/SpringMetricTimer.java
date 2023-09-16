@@ -7,11 +7,6 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.concurrent.TimeUnit;
 
-/**
- * @Author lucky_wxn
- * @Date 16/9/2023 上午11:32
- * @Content
- */
 public class SpringMetricTimer implements MetricTimer {
     private String metricName;
     private Map<String, String> tagMap;
